@@ -1,0 +1,126 @@
+
+<div class="container p-5" style="display: block;border-bottom: groove;border-right: outset;background-color: rgb(230, 243, 243);width: 90%;max-width: 400px;">
+
+    <div style="text-align: center; font-size: xx-large;">
+        <label class="form-label">Cadastro de Paciente</label>
+    </div>
+
+    <form action="/CRUD-FATEC/Paciente/Cadastro" method="post" id="CadastroPaciente">
+        <div class = "form-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" class="form-control" id="nome" name = "nome" placeholder="Insira seu nome completo" required>
+        </div>
+
+        <div class = "form-group ">
+        <label for="cpf">CPF</label>
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Insira seu CPF" required>
+        </div>
+
+        <div class = "form-group ">
+        <label for="rg">RG</label>
+        <input type="text" class="form-control" id="rg" name="rg" placeholder="Insira seu RG" required>
+        </div>
+
+        <div class = "form-group ">
+        <label for="data_nascimento">Data de Nascimento</label>
+        <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" placeholder="Sua data de nascimento" required>
+        </div>
+
+        <div class = "form-group ">
+            <label for="sexo">Sexo</label>
+                <select class="form-control" name="sexo" id="sexo" required>
+                    <option value="*">Selecione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+        </div>
+        
+        <hr>
+        <div class = "form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Insira seu email" required>
+        
+        </div>
+
+        <div class="form-group">
+        <label for="senha1">Senha</label>
+        <input type="password" class="form-control" id="senha1" name="senha1" placeholder="Insira sua Senha" required oninput="verSenha1(value)">
+
+        <input type="password" class="form-control" id="senha2" name="senha2" placeholder="Confirme sua Senha" required oninput="verSenha2(value)">
+        <center>
+            <label hidden id="msgSenha" style="color: red">As senhas não conferem!!</label>
+
+        </center>
+        </div><br>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="consentimento" name="consentimento" value="1" required>
+                <label class="form-check-label" for="">Declaro que li e aceito os termos de uso</label>
+            </div>
+        </div>
+        <hr>
+        {{mensagem}}
+        <div class="form-group" style="text-align-last: center;">
+            <button type="submit" class="form-group btn btn-primary">Me cadastrar</button>
+            <a href="CRUD-FATEC/login">
+                <button type="button" class="btn btn-dark">Fazer login</button>
+            </a>
+        </div>
+
+
+    </form>
+</div>
+
+<script>
+    senha1 = "";
+    senha2 = "";
+
+    window.onload = function(){
+        document.getElementById("CadastroPaciente").onsubmit = function(event) {
+            event.preventDefault();
+
+            if (senha1 == senha2) {
+                this.submit();
+            } else {
+                document.getElementById("msgSenha").hidden = false;
+            }
+
+        }
+    }
+
+
+    function verSenha1(value){
+        senha1 = value;
+
+        if (senha1 != senha2) {
+            document.getElementById("senha1").style.color = "red";
+            document.getElementById("senha2").style.color = "red";
+            document.getElementById("msgSenha").hidden = false;
+        } else {
+            document.getElementById("senha1").style.color = "black";
+            document.getElementById("senha2").style.color = "black";
+            document.getElementById("msgSenha").hidden = true;
+        }
+
+    }
+
+    function verSenha2(value){
+        senha2 = value;
+
+        if (senha2 != senha1) {
+            document.getElementById("senha1").style.color = "red";
+            document.getElementById("senha2").style.color = "red";
+            document.getElementById("msgSenha").hidden = false;
+        } else {
+            document.getElementById("senha1").style.color = "black";
+            document.getElementById("senha2").style.color = "black";
+            document.getElementById("msgSenha").hidden = true;
+        }
+
+    }
+
+</script>
+
+
+

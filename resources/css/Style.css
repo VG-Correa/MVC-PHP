@@ -1,0 +1,66 @@
+    body {
+  font-family: sans-serif;
+}
+
+.logo {
+  font-size: 50px;
+  border-radius: 5px;
+  text-align: center;
+  color: blue;
+  margin-bottom: 0px;
+}
+
+.txt_email {
+  font-size: 25px;
+  margin: 0px;
+  text-align: center;
+}
+.txt_senha {
+  font-size: 25px;
+  margin: 0px;
+  text-align: center;
+}
+
+.Entry_Email {
+  text-align: center;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+.Entry_Senha {
+  text-align: center;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+
+.Login {
+  align-items: center;
+  align-content: center;
+  background-color: gainsboro;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 40px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.Cabe�alho {
+  text-align: center;
+}
+
+.txt_SPEC {
+  font-size: 10px;
+  padding-top: 0px;
+  margin-top: 0px;
+  text-align: center; 
+}
+
+.BT_Entrar {
+  margin-top: 10px;
+  /* padding: 10px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+}

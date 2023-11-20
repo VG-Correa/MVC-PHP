@@ -1,0 +1,26 @@
+
+<div class="container p-5" style="display: block;border-bottom: groove;border-right: outset;background-color: rgb(230, 243, 243);width: 90%;max-width: 400px;">
+
+    <div style="text-align: center; font-size: xx-large;">
+        <label class="form-label">Login</label>
+    </div>
+
+<form method="POST">
+<div class = "form-group">
+<label for="email">Email</label>
+<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Insira seu email">
+</div>
+<div class="form-group">
+<label for="senha">Senha</label>
+<input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua Senha">
+{{mensagem}}
+</div><br>
+<div class="form-group" style="text-align-last: center;">
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a href="/CRUD-FATEC/Paciente/Cadastro">
+        <button type="button" class="btn btn-dark">Cadastrar conta</button>
+    </a>
+</div>
+</form>
+
+</div>
